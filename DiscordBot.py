@@ -3,7 +3,7 @@ import discord
 import googletrans
 from pprint import pprint
 # 自分のBotのアクセストークンに置き換えてください
-TOKEN = 'ODUxNjQ1MzU4NzMwOTAzNTcz.YL7SjA.eitU5BjQKOfMwCuwUMTMl12TSMY'
+TOKEN = ''
 
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
