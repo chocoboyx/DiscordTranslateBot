@@ -1,10 +1,11 @@
 # DiscordTranslateBot
 
-必要なライブラリをインストール
+安裝需要的函示庫
 
 pip install discord.py
 
 pip install googletrans==4.0.0-rc1
 
-Discord Botのトークンを取得
-https://qiita.com/1ntegrale9/items/cb285053f2fa5d0cccdf
+建立Discord Bot取得TOKEN碼
+參考:
+https://b-l-u-e-b-e-r-r-y.github.io/post/DiscordBot01/
