@@ -1,27 +1,24 @@
-# インストールした discord.py を読み込む
 import discord
 import googletrans
 from pprint import pprint
-# 自分のBotのアクセストークンに置き換えてください
+# 輸入自己Bot的TOKEN碼
 TOKEN = ''
 
-# 接続に必要なオブジェクトを生成
 client = discord.Client()
 
-# 起動時に動作する処理
+# 起動時呼叫
 @client.event
 async def on_ready():
-    # 起動したらターミナルにログイン通知が表示される
-    print('ログインしました')
+    print('成功登入')
 
-# メッセージ受信時に動作する処理
+# 收到訊息時呼叫
 @client.event
 async def on_message(message):
-    # メッセージ送信者がBotだった場合は無視する
+    # 送信者為Bot時無視
     if message.author.bot:
         return
     
-    if client.user in message.mentions: # 話しかけられたかの判定
+    if client.user in message.mentions: # @判定
         translator = googletrans.Translator()
         robotName = client.user.name
         if translator.detect(message.content) == 'zh-tw':
@@ -32,7 +29,7 @@ async def on_message(message):
         if content == '':
             content = first
         remessage = translator.translate(content, dest='zh-tw').text
-        await message.reply(remessage) # 返信する非同期関数を実行
+        await message.reply(remessage) 
 
-# Botの起動とDiscordサーバーへの接続
+# Bot起動
 client.run(TOKEN)
